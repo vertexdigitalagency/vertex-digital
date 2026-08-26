@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------- */
+/* Design tokens (mirrors tailwind.config.ts — used for raw CSS needs)   */
+/* -------------------------------------------------------------------- */
+:root {
+  --color-background: #050816;
+  --color-surface: #0f172a;
+  --color-surface-raised: #141b33;
+  --color-surface-border: #1e2a47;
+  --color-accent: #7c3aed;
+  --color-accent-soft: #a78bfa;
+  --color-accent2: #3b82f6;
+  --color-accent2-soft: #60a5fa;
+  --color-foreground: #f5f6fa;
+  --color-muted: #8b93a7;
+
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height: 84px;
+}
+
+* {
+  border-color: var(--color-surface-border);
+}
+
+html {
+  scroll-behavior: auto; /* Lenis takes over scrolling; avoid double-handling */
+  background-color: var(--color-background);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Slim, premium scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dim, #5b21b6);
+}
+
+/* Respect reduced-motion preferences everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus ring across the site */
+:focus-visible {
+  outline: 2px solid var(--color-accent2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* -------------------------------------------------------------------- */
+/* Shared layout utilities                                              */
+/* -------------------------------------------------------------------- */
+@layer components {
+  .container-vertex {
+    @apply mx-auto w-full max-w-container px-6 md:px-10;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-accent2-soft;
+  }
+
+  .heading-gradient {
+    @apply bg-vertex-gradient bg-clip-text text-transparent;
+  }
+
+  .glass-panel {
+    @apply border border-white/[0.06] bg-surface/60 backdrop-blur-xl;
+  }
+
+  .card-base {
+    @apply rounded-xl2 border border-white/[0.06] bg-surface shadow-card;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-vertex-gradient px-7 py-3.5 text-sm font-semibold text-white shadow-glow transition-transform duration-500 ease-premium hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur-md transition-all duration-500 ease-premium hover:border-white/30 hover:bg-white/[0.07];
+  }
+}
+
+/* -------------------------------------------------------------------- */
+/* Background texture: faint engineering grid, brand-appropriate         */
+/* -------------------------------------------------------------------- */
+.bg-grid {
+  background-image: var(--grid-image, none);
+  background-size: 56px 56px;
+}
