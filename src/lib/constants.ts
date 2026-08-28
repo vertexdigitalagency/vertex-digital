@@ -30,7 +30,7 @@ import type {
 export const SITE = {
   name: "Vertex Digital",
   tagline: "Premium digital solutions for businesses that refuse to blend in.",
-  email: "malnaduser777@gmail.com",
+  email: "vertexdigitalagency.in@gmail.com",
   phone: "+91 9353591776",
   address: "Bangalore, KA",
 };
