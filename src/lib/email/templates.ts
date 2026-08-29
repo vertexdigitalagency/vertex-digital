@@ -93,7 +93,7 @@ export function contactConfirmationEmail(payload: ContactPayload): EmailContent 
     "",
     "Thanks for reaching out to Vertex Digital. We've received your message and a member of our team will get back to you within one business day with next steps.",
     "",
-    `We appreciate your interest and will contact you shortly.`,
+    "We appreciate your interest and will contact you shortly.",
     "",
     "Talk soon,",
     "The Vertex Digital team",
