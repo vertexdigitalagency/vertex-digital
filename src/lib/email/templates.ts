@@ -79,12 +79,7 @@ export function contactConfirmationEmail(payload: ContactPayload): EmailContent 
           Thanks for reaching out to Vertex Digital. We've received your message
           and a member of our team will get back to you within one business day
           with next steps.
-        </p>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 16px; color: #374151;">
-          In the meantime, feel free to take a look at
-          <a href="${SITE_URL}/portfolio" style="color: #7C3AED;">our recent work</a>
-          or <a href="${SITE_URL}/pricing" style="color: #7C3AED;">how we price projects</a>.
-        </p>
+        
         <p style="font-size: 15px; line-height: 1.6; margin: 24px 0 0; color: #374151;">
           Talk soon,<br />The Vertex Digital team
         </p>
@@ -98,7 +93,7 @@ export function contactConfirmationEmail(payload: ContactPayload): EmailContent 
     "",
     "Thanks for reaching out to Vertex Digital. We've received your message and a member of our team will get back to you within one business day with next steps.",
     "",
-    `In the meantime, feel free to take a look at our recent work: ${SITE_URL}/portfolio`,
+    `We appreciate your interest and will contact you shortly.`,
     "",
     "Talk soon,",
     "The Vertex Digital team",
