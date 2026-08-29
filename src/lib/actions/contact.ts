@@ -116,6 +116,9 @@ export async function submitContactForm(
   const notification = contactNotificationEmail(payload);
   const confirmation = contactConfirmationEmail(payload);
 
+  console.log("ADMIN EMAIL:", SITE.email);
+  console.log("CLIENT EMAIL:", payload.email);
+
   const [notifyResult, confirmResult] = await Promise.allSettled([
     emailProvider.send({
       to: SITE.email,
