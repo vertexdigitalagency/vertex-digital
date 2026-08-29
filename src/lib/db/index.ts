@@ -17,6 +17,7 @@ let warnedAboutFileStore = false;
  */
 export function getSubmissionStore(): SubmissionStore {
   if (storeInstance) return storeInstance;
+  console.log("DATABASE_URL exists:", !!process.env.DATABASE_URL);
 
   const databaseUrl = process.env.DATABASE_URL;
 
